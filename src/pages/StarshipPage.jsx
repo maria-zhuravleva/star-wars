@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { getStarshipById } from "../services/sw-api"
 
 const StarshipPage = () => {
@@ -10,7 +11,6 @@ const StarshipPage = () => {
     const fetchDetails = async () => {
       const starshipData = await getStarshipById(starshipId)
       setStarshipDetails(starshipData)
-      console.log(starshipId)
     }
     fetchDetails()
   }, [starshipId])
@@ -21,6 +21,9 @@ const StarshipPage = () => {
     <main className="starship-details">
       <h3>NAME: {starshipDetails.name}</h3>
       <h3>MODEL: {starshipDetails.model}</h3>
+      <h3>
+      <Link to={`/starships`}>RETURN</Link>
+      </h3>
     </main>
   )
 }
