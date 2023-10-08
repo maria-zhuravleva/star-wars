@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link } from 'react-router-dom'
 import { getAllStarships } from "../services/sw-api"
-// import '../App.css'
 
 const StarshipList = () => {
   const [starshipList, setStarshipList] = useState([])

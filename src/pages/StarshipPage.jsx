@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 import { getStarshipById } from "../services/sw-api"
+import PilotList from "../components/PilotList"
 
 const StarshipPage = () => {
   const [starshipDetails, setStarshipDetails] = useState({})
@@ -26,6 +27,9 @@ const StarshipPage = () => {
         <Link to={`/starships`} style={{ color: "white"}}>
           RETURN
         </Link>
+        </h4>
+        <h4>
+          <PilotList pilotUrls={starshipDetails.pilots} />
         </h4>
       </div>
     </main>
