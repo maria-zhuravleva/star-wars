@@ -9,6 +9,7 @@ const StarshipList = () => {
     const fetchStarshipList = async () => {
       const starshipData = await getAllStarships()
       setStarshipList(starshipData.results)
+      console.log(starshipData.results)
     }
     fetchStarshipList()
   }, [])
@@ -19,7 +20,7 @@ const StarshipList = () => {
     <main className="starship-list">
       {starshipList.map(starship =>
         <div className="link-container" key={starship.name}>
-          <Link to={`/starships/${starship.name}`}>{starship.name}</Link>
+          <Link to={`/starships/${starship.url.match(/(\d+)\/$/)[1]}`}>{starship.name}</Link>
         </div>
       )}
     </main>

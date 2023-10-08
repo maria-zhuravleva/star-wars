@@ -1,4 +1,6 @@
+import { Route, Routes } from 'react-router-dom'
 import StarshipList from './components/StarshipList'
+import StarshipPage from './pages/StarshipPage'
 import './App.css'
 
 function App() {
@@ -9,6 +11,10 @@ function App() {
         <h1>STAR WARS STARSHIPS</h1>
       </header>
       <StarshipList />
+      <Routes>
+        <Route path="/starships" element={<StarshipList />}/>
+        <Route path='/starships/:starshipId' element={<StarshipPage />}/>
+      </Routes>
     </>
   )
 }
