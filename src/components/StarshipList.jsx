@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link } from 'react-router-dom'
 import { getAllStarships } from "../services/sw-api"
+// import '../App.css'
 
 const StarshipList = () => {
   const [starshipList, setStarshipList] = useState([])
@@ -18,8 +19,8 @@ const StarshipList = () => {
   return (
     <main className="starship-list">
       {starshipList.map(starship =>
-        <div className="link-container" key={starship.name}>
-          <Link to={`/starships/${starship.url.match(/(\d+)\/$/)[1]}`}>{starship.name}</Link>
+        <div className="starship-card" key={starship.name}>
+          <Link to={`/starships/${starship.url.match(/(\d+)\/$/)[1]}`} style={{ color: 'white', textDecoration: 'none' }}>{starship.name}</Link>
         </div>
       )}
     </main>

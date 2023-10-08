@@ -19,11 +19,15 @@ const StarshipPage = () => {
 
   return (
     <main className="starship-details">
-      <h3>NAME: {starshipDetails.name}</h3>
-      <h3>MODEL: {starshipDetails.model}</h3>
-      <h3>
-      <Link to={`/starships`}>RETURN</Link>
-      </h3>
+      <div className="starship-details-card">
+        <h4>NAME: {starshipDetails.name}</h4>
+        <h4>MODEL: {starshipDetails.model}</h4>
+        <h4>
+        <Link to={`/starships`} style={{ color: "white"}}>
+          RETURN
+        </Link>
+        </h4>
+      </div>
     </main>
   )
 }
